@@ -1,18 +1,33 @@
 # 25DC2012 IA3 – Quantum Algorithms in Q#
 
-One Q# program for each of the 25 cases in the IA3 handout, in [`cases/`](cases/).
-Every program follows its case's circuit recipe exactly, keeps the oracle in its own
-operation, and prints the team's register numbers first using `Message()`.
+For each of the 25 cases in the IA3 handout, this repo has:
 
-## Before you submit
+- **[`cases/`](cases/)**: the Q# program, `RegNo_CaseNN.qs`. It follows the case's circuit recipe exactly, keeps the oracle in its own operation, and prints the team's register numbers first using `Message()`.
+- **[`reports/`](reports/)**: the Part B report as an editable Word file, `RegNo_CaseNN_Report.docx`. It has all six required sections in order: cover page, aim and circuit (with a circuit drawing), code, output, answers to Q1 and Q2, and conclusion and references.
+- **[`reports/circuits/`](reports/circuits/)**: the circuit diagram for each case, already placed in its report.
 
-1. Find out your team's case number from your teacher or Google Classroom.
-2. Open `cases/RegNo_CaseNN.qs` for that case.
-3. Replace `REG_NO_1, REG_NO_2, REG_NO_3` on the `Message(...)` line with your real register numbers.
-4. Rename the file to `<YourRegNo>_CaseNN.qs`, for example `URK23CS1234_Case07.qs`.
-5. Open the file in VS Code with the Quantum Development Kit extension, then click **Run** (cases 1–8) or **Histogram** (cases 9–25).
-6. Take screenshots of the code, the output and the histogram for the report.
-7. **Make sure every team member understands the code.** The rubric gives 0–3 for implementation if you can't explain it.
+## What you need to submit
+
+| File | Who | Status |
+|---|---|---|
+| `RegNo_CaseNN_Report.pdf` (Parts A and B) | One per team | Template ready. Fill it in and export to PDF (steps below) |
+| `RegNo_CaseNN.qs` | One per team | Ready. Add your register numbers and rename it |
+| `RegNo_Cert.pdf` and the public Credly link (Part C) | Every student | You do this yourself (IBM course and exam) |
+
+Finishing the IBM course alone is **not** enough. That is only Part C, worth 10 of the 40 marks.
+
+## Steps once you know your case number
+
+1. **Code:** open `cases/RegNo_CaseNN.qs`. Replace `REG_NO_1, REG_NO_2, REG_NO_3` on the `Message(...)` line with your real register numbers. Rename the file to `<YourRegNo>_CaseNN.qs`, for example `URK23CS1234_Case07.qs`.
+2. **Run:** open the file in VS Code with the Quantum Development Kit extension. Click **Run** for cases 1–8, or **Histogram** for cases 9–25 with at least 100 shots (200 for Shor). For Grover, run once with `iterations = 1`, then change it to 2 and run again.
+3. **Report:** open `reports/RegNo_CaseNN_Report.docx`. Everything highlighted in yellow is a placeholder:
+   - On the cover page, fill in team names, register numbers, faculty name and date. Delete row 3 if your team has 2 people.
+   - Replace the code in section 3 with your final code, the version with your real register numbers.
+   - In section 4, paste your screenshots into the dashed boxes and fill in the shot counts from your histogram.
+   - Fill in the course textbook reference in section 6.
+   - Remove all yellow highlighting, then **File → Save As → PDF** and name it `<YourRegNo>_CaseNN_Report.pdf`.
+4. **Check** that your actual output matches the "Observed result" text in the report. It should; see the table below.
+5. **Read your answers.** The rubric gives 0–3 for implementation if you can't explain the code, and it marks "own words" in Part B. Every team member should understand the code and the Q1 and Q2 answers, and adjust the wording to your own.
 
 ## Expected results
 
@@ -37,8 +52,7 @@ All 25 programs were tested in the Q# simulator. In the results, bits are printe
 
 ## Notes for the report questions (Q1, Q2)
 
-These notes explain the ideas behind each answer. The rubric marks Part B for being in
-**your own words**, so use them to understand the ideas, then write your answers yourself.
+Short versions of the ideas behind each answer. The full, case-specific answers are in each report.
 
 ### Deutsch (cases 1–3)
 - **Q1 – Phase kickback.** X then H puts the ancilla in |−⟩ = (|0⟩ − |1⟩)/√2. The oracle does |x⟩|y⟩ → |x⟩|y ⊕ f(x)⟩.
